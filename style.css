@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background: hsl(30, 38%, 92%);
+    --button-and-price: hsl(158, 36%, 37%);
+    --main-text: hsl(228, 12%, 48%);
+
+    --plain-text: "Montserrat", serif;
+    --headers-text: "Fraunces", serif;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-color: var(--background);
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-main{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0;
+
+    max-width: 800px;
+    max-height: 600px;
+
+    margin: 10em auto 3em auto;
+
+    background-color: #fff;
+
+    border-radius: 15px;
+}
+
+img, .card-text{
+    display: block;
+}
+
+img{
+    max-height: 600px;
+    border-radius: 15px 0 0 15px;
+}
+
+.card-text{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 2.8rem;
+    gap: 2rem;
+}
+
+.card-text p:first-child{
+    font-family: var(--plain-text);
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5ch;
+    
+    color: var(--main-text);
+}
+
+.card-text p:nth-of-type(2){
+    font-family: var(--headers-text);
+    font-size: 38px;
+    font-weight: 700;
+
+    line-height: 40px;
+}
+
+.card-text p:nth-of-type(3){
+    font-family: var(--plain-text);
+    color: var(--main-text);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.card-text p:nth-of-type(4){
+   display: flex;
+   align-items: center;
+}
+
+.card-text p span:first-child{
+    font-family: var(--headers-text);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--button-and-price);
+    padding-right: 1.4rem;
+
+}
+
+.card-text p span:last-child{
+    font-family: var(--plain-text);
+    font-size: 16px;
+
+    color: var(--main-text);
+
+    text-decoration: line-through;
+
+}
+
+button{
+    display: block;
+    position: relative;
+    
+    width: 100%;
+    border: none;
+    background-color: var(--button-and-price);
+    height: 55px;
+    border-radius: 10px;
+
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    color: white;
+    font-size: 16px;
+
+    &:hover{
+        cursor: pointer;
+
+
+        background-color: hsl(158, 30%, 20%);
+    }
+}
+
+button svg, button p{
+    display: inline-block;
+}
+
+button svg{
+padding-top: 3px;
+overflow: visible;
+}
+
+button p{
+    padding-left: 10px;
+}
+
+.attribution{
+    position: absolute;
+    bottom: 10%;
+    z-index: -10;
+}
+
+body img:last-of-type{
+    display: none;
+}
+
+@media (max-width: 1000px){
+    .card-main{
+        display: block flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 400px;
+        max-height: 758px;
+        overflow: hidden;
+    }
+
+    .card-text{
+        padding: 1.3rem;
+        gap: 1rem;
+    }
+
+    .card-text br{
+        display: none;
+    }
+
+    body img:first-of-type{
+        display: none;
+    }
+
+    body img:last-of-type{
+        display: block;
+        max-height: 280px;
+        border-radius: 0;
+    }
+}
